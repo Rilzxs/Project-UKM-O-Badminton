@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Informasi Turnamen | UKM-O Badminton Polije</title>
+  <meta name="description" content="UKM-O Badminton Politeknik Negeri Jember — Sportivitas, Kebersamaan, Prestasi, Tanpa Batas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/anggota.css">
+</head>
+<body>
+<div class="page">
+  <div class="member">
+    <aside class="sidebar">
+      <div class="sidebar__profile">
+        <a class="sidebar__logo" href="beranda.html" aria-label="Kembali ke Beranda"><img src="../assets/img/logo.png" alt="Logo UKM-O Badminton"></a>
+      </div>
+      <nav class="sidebar__menu" aria-label="Menu anggota">
+        <a class="sidebar__link" href="dashboard.html"><img src="../assets/icons/side-layout-dashboard.svg" alt=""><span>Dashboard</span></a>
+        <a class="sidebar__link" href="struktur-keanggotaan.html"><img src="../assets/icons/side-contact-round.svg" alt=""><span>Struktur Keanggotaan</span></a>
+        <a class="sidebar__link" href="latihan-materi.html"><img src="../assets/icons/side-calendar-days.svg" alt=""><span>Latihan &amp; Materi</span></a>
+        <span class="sidebar__link is-active" aria-current="page"><img src="../assets/icons/side-calendar-range.svg" alt=""><span>Informasi Turnamen</span></span>
+      </nav>
+    </aside>
+    <main class="member__content">
+      <div class="page-head">
+        <h1 class="page-head__title">Informasi Turnamen</h1>
+        <p class="page-head__sub page-head__sub--lg">Jadwal dan informasi turnamen yang akan diikuti.</p>
+      </div>
+      <div class="chips" data-filter-bar data-filter-target="#daftar" data-filter-empty="#kosong" role="group" aria-label="Status turnamen">
+        <button type="button" class="chip is-active" data-filter="mendatang" aria-pressed="true">Mendatang</button>
+        <button type="button" class="chip" data-filter="selesai" aria-pressed="false">Selesai</button>
+      </div>
+      <section class="info-list" id="daftar" aria-label="Daftar turnamen">
+        <article class="info-item" data-category="mendatang"><img class="info-item__icon" src="../assets/icons/calendar-days.svg" alt=""><div class="info-item__body"><h3 class="info-item__title">Jember Open 2025</h3><p class="info-item__sub info-item__sub--multi">5–7 Juli 2025
+Lokasi: GOR Jember</p></div><button class="btn" type="button">Detail</button></article>
+        <article class="info-item" data-category="mendatang"><img class="info-item__icon" src="../assets/icons/calendar-days.svg" alt=""><div class="info-item__body"><h3 class="info-item__title">Turnamen Mahasiswa Jatim</h3><p class="info-item__sub info-item__sub--multi">10–11 Juni 2025
+Lokasi: GOR Jatim</p></div><button class="btn" type="button">Detail</button></article>
+        <article class="info-item" data-category="mendatang"><img class="info-item__icon" src="../assets/icons/calendar-days.svg" alt=""><div class="info-item__body"><h3 class="info-item__title">Rektor Cup</h3><p class="info-item__sub info-item__sub--multi">12–14 Agustus 2025
+Lokasi: GOR Surabaya</p></div><button class="btn" type="button">Detail</button></article>
+      </section>
+      <p class="empty-state" id="kosong" hidden>Belum ada turnamen yang selesai.</p>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="brand brand--sm">
+      <div class="brand__logo"><img src="../assets/img/logo.png" alt="Logo UKM-O Badminton"></div>
+      <div>
+        <p class="brand__name">UKM-O BADMINTON</p>
+        <p class="brand__org">Politeknik Negeri Jember</p>
+      </div>
+    </div>
+    <div class="social">
+      <span class="social__item"><a class="social__link social__link--ig" href="https://www.instagram.com/badmin.polije?obrf=MTV5YWIzNGdqbWRlZg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="social__glyph"><img src="../assets/icons/footer-instagram.svg" alt=""></span></a></span>
+      <span class="social__item"><a class="social__link social__link--tt" href="https://www.tiktok.com/@ukm.olahraga.polije?_r=1&_t=ZS-9AvQqLpipfg" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><span class="social__glyph"><img src="../assets/icons/footer-tiktok.svg" alt=""></span></a></span>
+      <span class="social__item"><a class="social__link social__link--yt" href="https://youtube.com/@ukmolahraga790?si=BxcX6VEN3s7oqgib" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><span class="social__glyph"><img src="../assets/icons/footer-youtube.svg" alt=""></span></a></span>
+    </div>
+  </footer>
+</div>
+<script src="../js/filter.js"></script>
+</body>
+</html>
