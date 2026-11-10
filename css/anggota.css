@@ -1,0 +1,179 @@
+/* =========================================================
+   anggota.css — Dashboard, Struktur, Latihan & Materi,
+   Teknik Dasar, Informasi Turnamen
+   ========================================================= */
+
+/* ---------- Dashboard ---------- */
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 180px;
+  padding: 36px;
+  background: linear-gradient(180deg, #2563eb 0%, #3b91f8 100%);
+  border-radius: var(--radius);
+  color: #fff;
+}
+
+.banner__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.banner__title {
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.banner__sub {
+  font-size: 22px;
+  color: var(--tint-2);
+}
+
+.banner__icon {
+  flex: none;
+  width: 80px;
+  height: 80px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.features__row {
+  display: flex;
+  gap: 25px;
+}
+
+.features .feature-card {
+  height: 210px;
+}
+
+/* ---------- daftar item (latihan, teknik, turnamen) ---------- */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 130px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+a.info-item,
+.info-item--link {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.info-item--link:hover {
+  transform: translateX(3px);
+  box-shadow: var(--shadow-card);
+}
+
+.info-item__icon {
+  flex: none;
+  width: 36px;
+  height: 36px;
+}
+
+.info-item__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.info-item__title {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.info-item__sub {
+  font-size: 17px;
+  color: var(--muted);
+}
+
+.info-item__chevron {
+  flex: none;
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Struktur keanggotaan ---------- */
+.org {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.org__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 280px;
+  max-width: 100%;
+  height: 145px;
+  padding: 20px;
+  background: var(--tint);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.org__box--wide {
+  width: 513.5px;
+}
+
+.org__box img {
+  width: 40px;
+  height: 40px;
+}
+
+.org__role {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.org__line {
+  width: 2px;
+  height: 35px;
+  background: var(--line);
+}
+
+/* ---------- Informasi turnamen ---------- */
+.info-item__sub--multi {
+  white-space: pre-line;
+}
+
+@media (max-width: 900px) {
+  .features__row {
+    flex-direction: column;
+  }
+  .features .feature-card {
+    height: auto;
+    min-height: 140px;
+  }
+  .banner {
+    padding: 24px;
+  }
+  .info-item {
+    padding: 18px;
+    gap: 16px;
+  }
+}
