@@ -1,0 +1,276 @@
+/* =========================================================
+   layout.css — navigasi utama, footer, dan rangka area anggota
+   ========================================================= */
+
+/* ---------- identitas organisasi (dipakai di nav & footer) ---------- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+}
+
+.brand__logo {
+  flex: none;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.brand__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand__name {
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.brand__org {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.brand--sm .brand__logo {
+  width: 40px;
+  height: 40px;
+}
+
+.brand--sm .brand__name {
+  font-size: 13px;
+}
+
+.brand--sm .brand__org {
+  font-size: 10px;
+}
+
+/* ---------- navigasi utama (halaman publik) ---------- */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 80px;
+  padding: 0 48px;
+  background: var(--grad-bar);
+  color: #fff;
+}
+
+.site-nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.site-nav__link {
+  transition: opacity 0.2s ease-out;
+}
+
+a.site-nav__link:hover {
+  opacity: 0.75;
+}
+
+/* penyeimbang 24px di kanan menu (slot ikon search pada desain) */
+.site-nav__spacer {
+  flex: none;
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- footer ---------- */
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 48px;
+  background: var(--grad-bar);
+}
+
+.social {
+  display: flex;
+  gap: 22px;
+}
+
+.social__item {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: clip;
+}
+
+.social__link {
+  position: absolute;
+  display: block;
+}
+
+.social__glyph {
+  position: absolute;
+}
+
+.social__glyph img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.social__link--ig {
+  inset: 8.33%;
+}
+.social__link--ig .social__glyph {
+  inset: -6%;
+}
+
+.social__link--tt {
+  inset: 8.33%;
+}
+.social__link--tt .social__glyph {
+  inset: -10.34% -8% -6% -8%;
+}
+
+.social__link--yt {
+  inset: 2.33%;
+}
+.social__link--yt .social__glyph {
+  inset: -8.49% -5.99%;
+}
+
+.social__link {
+  transition: opacity 0.2s ease-out;
+}
+.social__link:hover {
+  opacity: 0.7;
+}
+
+/* ---------- area anggota (sidebar + konten) ---------- */
+.member {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 23px;
+  width: 300px;
+  padding: 28px 18px;
+  background: var(--navy);
+}
+
+.sidebar__profile {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.sidebar__logo {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.sidebar__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 54px;
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: 16px;
+  transition: background 0.2s ease-out;
+}
+
+.sidebar__link img {
+  flex: none;
+  width: 21px;
+  height: 21px;
+}
+
+a.sidebar__link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar__link.is-active {
+  background: var(--blue);
+}
+
+.member__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 0;
+  padding: 50px 44px;
+}
+
+/* ---------- responsif ---------- */
+@media (max-width: 900px) {
+  .site-nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 14px 20px;
+  }
+
+  .site-nav__spacer {
+    display: none;
+  }
+
+  .site-nav__menu {
+    order: 3;
+    width: 100%;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .site-footer {
+    padding: 0 20px;
+  }
+
+  .member {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .sidebar__profile {
+    justify-content: flex-start;
+  }
+
+  .sidebar__menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar__link {
+    height: 46px;
+  }
+
+  .member__content {
+    padding: 28px 20px;
+  }
+}
