@@ -1,0 +1,349 @@
+/* =========================================================
+   halaman.css — Informasi UKM-O, Prestasi, Dokumentasi, Contact
+   ========================================================= */
+
+/* ---------- Informasi UKM-O ---------- */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.about__photo {
+  flex: none;
+  width: 460px;
+  max-width: 45%;
+}
+
+.about__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about__title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.about__text {
+  font-size: 21px;
+  color: var(--muted);
+}
+
+.vm {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 36px;
+  background: var(--tint);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.vm__head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.vm__head img {
+  width: 30px;
+  height: 30px;
+}
+
+.vm__title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.vm__body {
+  display: flex;
+  gap: 50px;
+}
+
+.vm__visi {
+  flex: none;
+  width: 430px;
+}
+
+.vm__misi {
+  flex: 1;
+}
+
+.vm__col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vm__heading {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.vm__visi p {
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.vm__misi li {
+  font-size: 19px;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+/* ---------- Prestasi ---------- */
+.section-title {
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.awards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 28px;
+}
+
+.award {
+  display: flex;
+  flex: 1 1 calc(33.333% - 28px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-width: 240px;
+  min-height: 280px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.award--wide {
+  flex-basis: calc(50% - 28px);
+}
+
+.award__icon {
+  width: 59px;
+  height: 59px;
+}
+
+.award__title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.award__text {
+  font-size: 20px;
+  color: var(--muted);
+}
+
+/* ---------- Dokumentasi (latihan & turnamen) ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 34px;
+}
+
+.gallery--turnamen {
+  gap: 36px 34px;
+}
+
+.gallery__item {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gallery--turnamen .gallery__item {
+  gap: 16px;
+}
+
+.gallery__caption {
+  font-size: 19px;
+  color: var(--muted);
+}
+
+.gallery--turnamen .gallery__caption {
+  font-size: 20px;
+}
+
+.gallery .crop img {
+  transition: transform 0.3s ease-out;
+}
+
+.gallery__item:hover .crop img {
+  transform: scale(1.03);
+}
+
+.page-section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.page-section--lg {
+  gap: 36px;
+}
+
+/* ---------- Contact ---------- */
+.contact-grid {
+  display: flex;
+  gap: 36px;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  min-width: 0;
+  min-height: 350px;
+  padding: 32px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.contact-card--main {
+  flex: none;
+  width: 720px;
+  max-width: 55%;
+}
+
+.contact-card--social {
+  flex: 1;
+}
+
+.contact-card__head {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.contact-card__head img {
+  width: 30px;
+  height: 30px;
+}
+
+.contact-card__title {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 20px;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+.contact-row img {
+  flex: none;
+  width: 31px;
+  height: 31px;
+}
+
+a.contact-row:hover {
+  color: var(--blue);
+}
+
+.location {
+  display: flex;
+  gap: 36px;
+}
+
+.location__map {
+  position: relative;
+  flex: none;
+  width: 720px;
+  max-width: 55%;
+  aspect-ratio: 720 / 240;
+  overflow: hidden;
+  background: var(--tint-2);
+  border-radius: var(--radius);
+}
+
+.location__map > img:first-child {
+  position: absolute;
+  top: calc(-38.25 / 240 * 100%);
+  left: calc(-22.75 / 720 * 100%);
+  width: calc(765.5 / 720 * 100%);
+  max-width: none;
+  height: auto;
+}
+
+.location__pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 62px;
+  height: 62px;
+  transform: translate(-50%, -50%);
+}
+
+.location__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.location__label {
+  font-size: 22px;
+  color: var(--muted);
+}
+
+.location__name {
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.location__org {
+  font-size: 21px;
+  color: var(--muted);
+}
+
+/* ---------- responsif ---------- */
+@media (max-width: 1100px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .vm__body {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .vm__visi {
+    width: auto;
+  }
+  .contact-grid,
+  .location {
+    flex-direction: column;
+  }
+  .contact-card--main,
+  .location__map {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .about {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .about__photo {
+    width: 100%;
+    max-width: none;
+  }
+}
