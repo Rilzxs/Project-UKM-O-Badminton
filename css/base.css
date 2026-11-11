@@ -1,0 +1,268 @@
+/* =========================================================
+   base.css — design tokens, reset, dan komponen dasar
+   Sumber: Figma "UKM-O Badminton"
+   ========================================================= */
+
+:root {
+  /* warna */
+  --bg: #f5fafe;
+  --navy: #05356d;
+  --text: #111827;
+  --muted: #52728e;
+  --border: #e5e7eb;
+  --blue: #3b82f6;
+  --tint: #eef7ff;
+  --tint-2: #dbeafe;
+  --placeholder: #8ca5ba;
+  --line: #b5cfe5;
+
+  --grad-bar: linear-gradient(180deg, #05356d 0%, #064783 68%, #1264a5 100%);
+  --grad-btn: linear-gradient(180deg, #138afa 0%, #2563dd 100%);
+
+  /* bentuk */
+  --shadow-card: 0 3px 12px rgba(23, 69, 121, 0.07);
+  --radius-sm: 7px;
+  --radius: 9px;
+  --radius-lg: 20px;
+
+  --font: "Arimo", Arial, Helvetica, sans-serif;
+}
+
+/* Transisi antar halaman (prototype: Smart Animate 300ms ease-out) */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-group(root) {
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text);
+  background: var(--bg);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+/* ---------- rangka halaman ---------- */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page__main {
+  flex: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 48px;
+}
+
+/* ---------- judul halaman ---------- */
+.page-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.page-head__title {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.page-head__sub {
+  font-size: 17px;
+  color: var(--muted);
+}
+
+.page-head__sub--lg {
+  font-size: 18px;
+}
+
+/* ---------- tombol ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 26px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--grad-btn);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: filter 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* ---------- kartu fitur ---------- */
+.feature-card {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-width: 0;
+  min-height: 140px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+a.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(23, 69, 121, 0.14);
+}
+
+.feature-card__title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.feature-card__icon {
+  width: 38px;
+  height: 38px;
+}
+
+/* ---------- chip kategori ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.chip {
+  min-width: 140px;
+  height: 46px;
+  padding: 0 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 0.2s ease-out, color 0.2s ease-out;
+}
+
+.chip:hover {
+  border-color: var(--blue);
+}
+
+.chip.is-active {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.empty-state {
+  padding: 32px;
+  color: var(--muted);
+  font-size: 19px;
+  text-align: center;
+}
+
+/* ---------- foto dengan crop (meniru posisi gambar di Figma) ----------
+   --cw/--ch = ukuran wadah, --l/--t/--w/--h = posisi & ukuran gambar (px di Figma) */
+.crop {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: var(--cw) / var(--ch);
+  border-radius: var(--radius-sm);
+}
+
+.crop > img {
+  position: absolute;
+  left: calc(var(--l) / var(--cw) * 100%);
+  top: calc(var(--t) / var(--ch) * 100%);
+  width: calc(var(--w) / var(--cw) * 100%);
+  max-width: none;
+  height: auto;
+  aspect-ratio: var(--w) / var(--h);
+  object-fit: cover;
+}
+
+.crop--round {
+  border-radius: var(--radius-lg);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .content {
+    padding: 28px 20px;
+  }
+}
