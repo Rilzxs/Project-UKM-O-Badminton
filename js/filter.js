@@ -1,15 +1,3 @@
-/* =========================================================
-   filter.js — filter kategori (chip) untuk halaman:
-   Dokumentasi Latihan, Latihan & Materi, Informasi Turnamen
-
-   Cara pakai di HTML:
-     <div class="chips" data-filter-bar data-filter-target="#daftar" data-filter-empty="#kosong">
-       <button class="chip" data-filter="all">Semua</button>
-       <button class="chip" data-filter="rutin">Latihan Rutin</button>
-     </div>
-     <div id="daftar"> <div data-category="rutin">…</div> </div>
-   ========================================================= */
-
 (function () {
   "use strict";
 
