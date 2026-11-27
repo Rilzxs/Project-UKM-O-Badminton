@@ -69,11 +69,18 @@
 }
 
 .site-nav__link {
-  transition: opacity 0.2s ease-out;
+  padding: 8px 20px;
+  border-radius: 999px;
+  transition: opacity 0.2s ease-out, background 0.2s ease-out;
+}
+/* menu halaman yang sedang dibuka */
+.site-nav__link.is-active {
+  background:linear-gradient(180deg, #1e3a8a, #3b82f6);
+  cursor: default;
 }
 
 a.site-nav__link:hover {
-  opacity: 0.75;
+ background: linear-gradient(180deg, #1e3a8a, #3b82f6);
 }
 
 /* penyeimbang 24px di kanan menu (slot ikon search pada desain) */
