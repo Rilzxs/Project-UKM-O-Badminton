@@ -1,4 +1,3 @@
-// Popup detail turnamen: isi diambil dari atribut data-* pada tiap .info-item
 (function () {
   var modal = document.getElementById('modal-turnamen');
   if (!modal) return;
@@ -8,7 +7,6 @@
   var elDesc   = document.getElementById('tmodal-desc');
   var elList   = document.getElementById('tmodal-list');
 
-  // [atribut data-*, label yang tampil]
   var FIELDS = [
     ['tanggal',      'Tanggal'],
     ['lokasi',       'Lokasi'],
@@ -17,7 +15,7 @@
     ['biaya',        'Biaya pendaftaran'],
     ['deadline',     'Batas pendaftaran'],
     ['peserta',      'Peserta'],
-    ['hasil',        'juara'],
+    ['hasil',        'Juara'],
     ['catatan',      'Catatan']
   ];
 
@@ -48,7 +46,6 @@
     modal.showModal();
   }
 
-  // Klik tombol Detail (event delegation, aman walau item di-filter)
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('[data-detail]');
     if (!btn) return;
@@ -63,7 +60,6 @@
     if (e.target === modal) modal.close();
   });
 
-  // Kembalikan fokus ke tombol Detail setelah ditutup
   modal.addEventListener('close', function () {
     if (lastTrigger) lastTrigger.focus();
   });
