@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/anggota.css">
+  <link rel="stylesheet" href="../css/turnamen-modal.css">
 </head>
 <body>
 <div class="page">
@@ -35,17 +36,113 @@
         <button type="button" class="chip is-active" data-filter="mendatang" aria-pressed="true">Mendatang</button>
         <button type="button" class="chip" data-filter="selesai" aria-pressed="false">Selesai</button>
       </div>
+
       <section class="info-list" id="daftar" aria-label="Daftar turnamen">
-        <article class="info-item" data-category="mendatang"><img class="info-item__icon" src="../assets/icons/calendar-days.svg" alt=""><div class="info-item__body"><h3 class="info-item__title">Jember Open 2025</h3><p class="info-item__sub info-item__sub--multi">5–7 Juli 2025
-Lokasi: GOR Jember</p></div><button class="btn" type="button">Detail</button></article>
-        <article class="info-item" data-category="mendatang"><img class="info-item__icon" src="../assets/icons/calendar-days.svg" alt=""><div class="info-item__body"><h3 class="info-item__title">Turnamen Mahasiswa Jatim</h3><p class="info-item__sub info-item__sub--multi">10–11 Juni 2025
-Lokasi: GOR Jatim</p></div><button class="btn" type="button">Detail</button></article>
-        <article class="info-item" data-category="mendatang"><img class="info-item__icon" src="../assets/icons/calendar-days.svg" alt=""><div class="info-item__body"><h3 class="info-item__title">Rektor Cup</h3><p class="info-item__sub info-item__sub--multi">12–14 Agustus 2025
-Lokasi: GOR Surabaya</p></div><button class="btn" type="button">Detail</button></article>
+
+        <!-- ===== MENDATANG ===== -->
+        <article class="info-item" data-category="mendatang"
+          data-status="Mendatang"
+          data-tanggal="5–7 Juli 2025"
+          data-lokasi="GOR Jember"
+          data-penyelenggara="Pengurus Daerah PBSI Jember"
+          data-kategori="Ganda putra, ganda putri, ganda campuran, tunggal"
+          data-biaya="Rp 150.000 per pemain"
+          data-deadline="25 Juni 2025"
+          data-deskripsi="Turnamen badminton tingkat daerah yang diikuti pemain dari berbagai klub dan kampus di wilayah Jember. UKM-O Badminton mengirim tim untuk menjajal kemampuan sekaligus menambah jam terbang bertanding."
+          data-catatan="Peserta wajib membawa kartu identitas (KTM) dan hadir 30 menit sebelum jadwal bertanding.">
+          <img class="info-item__icon" src="../assets/icons/calendar-days.svg" alt="">
+          <div class="info-item__body"><h3 class="info-item__title">Jember Open 2025</h3><p class="info-item__sub info-item__sub--multi">5–7 Juli 2025
+Lokasi: GOR Jember</p></div>
+          <button class="btn" type="button" data-detail>Detail</button>
+        </article>
+
+        <article class="info-item" data-category="mendatang"
+          data-status="Mendatang"
+          data-tanggal="10–11 Juni 2025"
+          data-lokasi="GOR Jatim"
+          data-penyelenggara="Dispora Jawa Timur"
+          data-kategori="Beregu putra, beregu putri (antar perguruan tinggi)"
+          data-biaya="Rp 500.000 per tim"
+          data-deadline="1 Juni 2025"
+          data-deskripsi="Kejuaraan badminton antar mahasiswa se-Jawa Timur dengan sistem beregu. Cocok sebagai ajang seleksi dan pembuktian kekuatan tim kampus."
+          data-catatan="Satu tim terdiri dari maksimal 8 pemain. Daftar nama tim disetor lewat pengurus UKM.">
+          <img class="info-item__icon" src="../assets/icons/calendar-days.svg" alt="">
+          <div class="info-item__body"><h3 class="info-item__title">Turnamen Mahasiswa Jatim</h3><p class="info-item__sub info-item__sub--multi">10–11 Juni 2025
+Lokasi: GOR Jatim</p></div>
+          <button class="btn" type="button" data-detail>Detail</button>
+        </article>
+
+        <article class="info-item" data-category="mendatang"
+          data-status="Mendatang"
+          data-tanggal="12–14 Agustus 2025"
+          data-lokasi="GOR Surabaya"
+          data-penyelenggara="Rektorat Universitas Penyelenggara"
+          data-kategori="Tunggal putra, tunggal putri, ganda putra, ganda putri"
+          data-biaya="Rp 200.000 per pemain"
+          data-deadline="1 Agustus 2025"
+          data-deskripsi="Turnamen tahunan memperebutkan piala rektor yang terbuka untuk mahasiswa dari berbagai perguruan tinggi."
+          data-catatan="Pertandingan memakai sistem gugur. Jadwal lengkap diumumkan H-3 melalui grup anggota.">
+          <img class="info-item__icon" src="../assets/icons/calendar-days.svg" alt="">
+          <div class="info-item__body"><h3 class="info-item__title">Rektor Cup</h3><p class="info-item__sub info-item__sub--multi">12–14 Agustus 2025
+Lokasi: GOR Surabaya</p></div>
+          <button class="btn" type="button" data-detail>Detail</button>
+        </article>
+
+        <!-- ===== SELESAI ===== -->
+        <article class="info-item" data-category="selesai" hidden
+          data-status="Selesai"
+          data-tanggal="ISI TANGGAL PORSENI"
+          data-lokasi="ISI LOKASI PORSENI"
+          data-penyelenggara="ISI PENYELENGGARA"
+          data-kategori="Cabang olahraga badminton"
+          data-peserta="ISI JUMLAH TIM/PESERTA"
+          data-hasil="ISI HASIL / JUARA YANG DIRAIH UKM-O BADMINTON"
+          data-deskripsi="Pekan Olahraga dan Seni (Porseni) adalah ajang olahraga dan seni antar unit/jurusan. UKM-O Badminton ikut serta pada cabang olahraga badminton."
+          data-catatan="ISI CATATAN (opsional)">
+          <img class="info-item__icon" src="../assets/icons/calendar-days.svg" alt="">
+          <div class="info-item__body"><h3 class="info-item__title">Porseni</h3><p class="info-item__sub info-item__sub--multi">ISI TANGGAL PORSENI
+Lokasi: ISI LOKASI PORSENI</p></div>
+          <button class="btn" type="button" data-detail>Detail</button>
+        </article>
+
+        <article class="info-item" data-category="selesai" hidden
+          data-status="Selesai"
+          data-tanggal="ISI TANGGAL HYDROPLUS CUP"
+          data-lokasi="ISI LOKASI HYDROPLUS CUP"
+          data-penyelenggara="ISI PENYELENGGARA"
+          data-kategori="ISI KATEGORI PERTANDINGAN"
+          data-peserta="ISI JUMLAH TIM/PESERTA"
+          data-hasil="ISI HASIL / JUARA YANG DIRAIH UKM-O BADMINTON"
+          data-deskripsi="Hydroplus Cup adalah turnamen badminton yang telah diikuti UKM-O Badminton Polije."
+          data-catatan="ISI CATATAN (opsional)">
+          <img class="info-item__icon" src="../assets/icons/calendar-days.svg" alt="">
+          <div class="info-item__body"><h3 class="info-item__title">Hydroplus Cup</h3><p class="info-item__sub info-item__sub--multi">ISI TANGGAL HYDROPLUS CUP
+Lokasi: ISI LOKASI HYDROPLUS CUP</p></div>
+          <button class="btn" type="button" data-detail>Detail</button>
+        </article>
+
       </section>
       <p class="empty-state" id="kosong" hidden>Belum ada turnamen yang selesai.</p>
     </main>
   </div>
+
+  <!-- ===== POPUP DETAIL TURNAMEN ===== -->
+  <dialog class="tmodal" id="modal-turnamen" aria-labelledby="tmodal-title">
+    <div class="tmodal__box">
+      <header class="tmodal__head">
+        <div>
+          <span class="tmodal__status" id="tmodal-status"></span>
+          <h2 class="tmodal__title" id="tmodal-title"></h2>
+        </div>
+      </header>
+      <p class="tmodal__desc" id="tmodal-desc"></p>
+      <dl class="tmodal__list" id="tmodal-list"></dl>
+      <footer class="tmodal__foot">
+        <button type="button" class="btn" data-close>Tutup</button>
+      </footer>
+    </div>
+  </dialog>
+
   <footer class="site-footer">
     <div class="brand brand--sm">
       <div class="brand__logo"><img src="../assets/img/logo.png" alt="Logo UKM-O Badminton"></div>
@@ -62,5 +159,6 @@ Lokasi: GOR Surabaya</p></div><button class="btn" type="button">Detail</button><
   </footer>
 </div>
 <script src="../js/filter.js"></script>
+<script src="../js/turnamen-detail.js"></script>
 </body>
 </html>
